@@ -57,7 +57,7 @@ function HeroSection() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="animate-fade-up">
             <span className="inline-block mb-6 px-4 py-1.5 bg-lavender/10 text-lavender text-sm font-medium rounded-full border border-lavender/20">
-              Tomorrow is not guaranteed — start today
+              Small steps today, lasting change tomorrow
             </span>
           </div>
 
