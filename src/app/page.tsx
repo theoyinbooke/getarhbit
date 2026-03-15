@@ -33,9 +33,6 @@ function Navbar() {
           <a href="#how-it-works" className="text-sm text-text-secondary hover:text-lavender transition-colors">
             How It Works
           </a>
-          <a href="#companion" className="text-sm text-text-secondary hover:text-lavender transition-colors">
-            Companion
-          </a>
           <a
             href="#download"
             className="text-sm font-semibold text-white bg-lavender hover:bg-lavender-dark px-5 py-2 rounded-full transition-all hover:shadow-lg hover:shadow-lavender/25"
@@ -353,68 +350,6 @@ function HowItWorksSection() {
   );
 }
 
-function CompanionSection() {
-  const stages = [
-    { icon: <EggStageIcon className="w-10 h-10 text-text-light" />, name: "Egg", time: "Day 1", description: "A mysterious egg awaits" },
-    { icon: <HatchlingStageIcon className="w-10 h-10 text-coral-light" />, name: "Hatchling", time: "~3 days", description: "Tiny and curious" },
-    { icon: <BabyPangolinIcon className="w-10 h-10 text-coral" />, name: "Baby", time: "~2 weeks", description: "Playful and growing" },
-    { icon: <JuvenilePangolinIcon className="w-10 h-10 text-green" />, name: "Juvenile", time: "~1 month", description: "Developing scales" },
-    { icon: <AdultPangolinIcon className="w-10 h-10 text-lavender" />, name: "Adult", time: "~2 months", description: "Strong and majestic" },
-    { icon: <ElderPangolinIcon className="w-10 h-10 text-lavender-dark" />, name: "Elder", time: "~6 months", description: "Legendary wisdom" },
-  ];
-
-  return (
-    <section id="companion" className="py-20 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-cream via-lavender/5 to-cream" />
-
-      <div className="relative max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block mb-4 px-4 py-1.5 bg-lavender/10 text-lavender-dark text-sm font-medium rounded-full border border-lavender/20">
-            Meet your companion
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-text tracking-tight">
-            A pangolin that <span className="text-lavender">grows with you</span>
-          </h2>
-          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
-            Your Baby Pangolin companion evolves as you maintain your habits.
-            Every completed habit nurtures it — every skipped day makes it worry.
-            You won&apos;t want to let it down.
-          </p>
-        </div>
-
-        {/* Evolution timeline */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {stages.map((stage, i) => (
-            <div
-              key={stage.name}
-              className="animate-scale-in bg-white rounded-2xl p-5 text-center border border-border transition-all hover:shadow-lg hover:shadow-lavender/10 hover:-translate-y-1"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="flex justify-center mb-3">{stage.icon}</div>
-              <div className="text-sm font-bold text-text">{stage.name}</div>
-              <div className="text-xs text-lavender font-medium mt-0.5">{stage.time}</div>
-              <div className="text-xs text-text-light mt-1">{stage.description}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Emotional appeal */}
-        <div className="mt-16 bg-white rounded-3xl p-8 md:p-12 border border-border text-center max-w-2xl mx-auto">
-          <FilledHeartIcon className="w-14 h-14 text-coral mx-auto mb-4" />
-          <h3 className="text-2xl md:text-3xl font-bold text-text mb-3">
-            Every tap is an act of care
-          </h3>
-          <p className="text-text-secondary leading-relaxed">
-            Completing a habit isn&apos;t just checking a box — it&apos;s feeding a companion who
-            believes in you. When life gets hard, rest mode protects your progress.
-            No guilt. No punishment. Just gentle growth.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function CultureSection() {
   return (
     <section className="py-20 md:py-32 bg-gradient-to-br from-text via-[#3D3147] to-lavender-dark text-white relative overflow-hidden">
@@ -616,48 +551,6 @@ function PlayStoreIcon({ dark }: { dark?: boolean }) {
   );
 }
 
-/* ─── Custom SVG Icons ─── */
-/* Pangolin companion evolution stage icons – hand-drawn style, two-tone fill */
-
-function EggStageIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M20 5c-6 0-11 9-11 17.5C9 29.4 13.5 35 20 35s11-5.6 11-12.5C31 14 26 5 20 5z"
-        fill="currentColor"
-        fillOpacity="0.1"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path d="M14 20c3.5-1.5 8.5-1.5 12 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
-      <path d="M13.5 25c4-1.5 9-1.5 13 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.2" />
-    </svg>
-  );
-}
-
-function HatchlingStageIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Cracked shell */}
-      <path
-        d="M11 23l2.5-3 3 3 3.5-4 3.5 4 2.5-3 2 3c0 5.5-3.5 10-8 10s-8-4.5-8-10z"
-        fill="currentColor"
-        fillOpacity="0.08"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      {/* Head */}
-      <circle cx="20" cy="14" r="5" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="1.5" />
-      {/* Eyes */}
-      <circle cx="18.2" cy="13.5" r="1.1" fill="currentColor" />
-      <circle cx="21.8" cy="13.5" r="1.1" fill="currentColor" />
-      {/* Snout */}
-      <path d="M19 16.2c.5.6 1.5.6 2 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function BabyPangolinIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -677,99 +570,6 @@ function BabyPangolinIcon({ className }: { className?: string }) {
   );
 }
 
-function JuvenilePangolinIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Body */}
-      <path
-        d="M13 28c-3-4-3-11 2-15s12-3 15 2 1 14-6 16c-3 1-7 1-9 0z"
-        fill="currentColor"
-        fillOpacity="0.1"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      {/* Head with snout */}
-      <path d="M14 14c-2-2.5-5-5-7.5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="10.5" cy="10.5" r="1.1" fill="currentColor" />
-      {/* Scales */}
-      <path d="M17 15c3.5-1.5 7-1.5 10.5 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.45" />
-      <path d="M16 19c4-1.5 8.5-1.5 12 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
-      <path d="M15.5 23c4-1.5 8.5-1.5 12 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
-      <path d="M16.5 27c3-1.5 6.5-1.5 9 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
-      {/* Tail */}
-      <path d="M27 27c3 3 6.5 4 8.5 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function AdultPangolinIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Full body */}
-      <path
-        d="M10 28c-4-5-3-13 3-17s15-2 18 4c3 6 0 15-8 17-4 1-8 0-10-1z"
-        fill="currentColor"
-        fillOpacity="0.12"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      {/* Long snout head */}
-      <path d="M12 12c-3-3-6.5-6.5-9-7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" />
-      {/* Dense scales */}
-      <path d="M16 13c4-2 9-2 13 0" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.45" />
-      <path d="M15 17c5-2 10-2 15 0" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.4" />
-      <path d="M14 21c5-2 10.5-2 15 0" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.35" />
-      <path d="M14.5 25c4.5-2 9.5-2 13 0" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.3" />
-      <path d="M16 29c3-1.5 7-1.5 10 0" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.25" />
-      {/* Legs */}
-      <path d="M15.5 30.5l-1 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M22 31.5l0 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      {/* Tail */}
-      <path d="M28 28c4 4 8 5 10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function ElderPangolinIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Wisdom aura */}
-      <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="0.5" opacity="0.12" strokeDasharray="2 3" />
-      {/* Body */}
-      <path
-        d="M11 27c-4-5-3-12 3-16s14-2 17 4c3 5 0 14-7 16-4 1-8 0-10-1z"
-        fill="currentColor"
-        fillOpacity="0.15"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      {/* Head */}
-      <path d="M13 13c-3-3-6-6-8-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="9.5" cy="9.5" r="1.2" fill="currentColor" />
-      {/* Scales */}
-      <path d="M17 13c3.5-1.5 8-1.5 12 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.45" />
-      <path d="M16 17c4-1.5 9-1.5 13 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
-      <path d="M15 21c4-1.5 9-1.5 13 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
-      <path d="M15.5 25c3.5-1.5 8-1.5 12 0" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
-      {/* Tail */}
-      <path d="M27 26c3 3.5 7 4.5 9 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      {/* Crown / wisdom marks */}
-      <path d="M16 4l2-2.5 2 2.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" />
-      <path d="M21 4l2-2.5 2 2.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" />
-      <path d="M18.5 2.5l1.5-1.5 1.5 1.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.4" />
-    </svg>
-  );
-}
-
-function FilledHeartIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <>
@@ -778,7 +578,6 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
-        <CompanionSection />
         <CultureSection />
         <DownloadSection />
       </main>
