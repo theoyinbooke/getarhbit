@@ -38,10 +38,11 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://arhbit.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Arhbit — Build Habits That Stick",
+        type: "image/png",
       },
     ],
   },
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     title: "Arhbit — Build Habits That Stick",
     description:
       "Transform habit tracking into a journey of nurturing growth. Accountability partners, smart streaks, and a companion who grows with you.",
-    images: ["/og-image.png"],
+    images: ["https://arhbit.com/og-image.png"],
   },
   robots: {
     index: true,
